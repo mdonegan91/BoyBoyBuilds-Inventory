@@ -1,14 +1,14 @@
-# Boy Boy Inventory Tracker
+# 🔧 Boy Boy Inventory Tracker 🔧
 
 ### A React application that tracks inventory for a local design & fabrication business
 
 #### By: Molly Donegan
 
-#### 🔩[Technologies Used](#technologies-used)
+#### 🪛[Technologies Used](#technologies-used)
 #### 🔩 [Component Diagram](#component-diagram)
-#### 🔩 [Setup / Installation](#setup-and-installation)
-#### 🔩 [Known Bugs](#known-bugs)
-#### 🔩 [License](#license)
+#### 🧰 [Setup / Installation](#setup-and-installation)
+#### 🗜️ [Known Bugs](#known-bugs)
+#### 🧲 [License](#license) 
 
 ## Technologies Used
 * React
