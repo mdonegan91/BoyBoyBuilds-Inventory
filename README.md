@@ -32,7 +32,7 @@ App.js
 │   ├── PartsDetail.js   
 │   ├── UpdatePartsForm.js            
 ```
-![design](/bird-logger%20design.png)
+![diagram](/diagram.png)
 
 # Getting Started with Create React App
 
@@ -42,11 +42,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Clone this project to your local machine by using the following command:
 ```
-git clone https://github.com/SarahAndyshak/bird-logger.git
+git clone https://github.com/mdonegan91/BoyBoyBuilds-Inventory
 ```
 
 **Directions after cloning are as follows:**
-1. Open the `bird-logger` directory within your CLI.
+1. Open the `boyboy-inventory` directory within your CLI.
 2. Install all Node packages and dependencies with the command `npm install`.
 3. Package and open the project in your browser using `npm run start`.
 4. Enjoy!
@@ -59,7 +59,7 @@ git clone https://github.com/SarahAndyshak/bird-logger.git
 
 **MIT License**
 
-Copyright (c) 2023 John Lenz, Brishna Bakshev, Sarah Andyshak, E Luckie, Erin Timlin and Molly Donegan
+Copyright (c) 2023 Molly Donegan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
