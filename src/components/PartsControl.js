@@ -47,7 +47,7 @@ class PartsControl extends React.Component {
     });
   }
 
-  handleUpdatingOneParts = (id) => {
+  handleUpdatingSelectedParts = (id) => {
     const partsThatWasClicked = this.state.mainPartsList.filter(parts => parts.id === id)[0];
     this.setState({
       selectedParts: partsThatWasClicked
@@ -65,15 +65,37 @@ class PartsControl extends React.Component {
     });
   }
 
-  handleSellingOneParts = () => {
+  handleSellingSelectedParts = () => {
     const partsThatSold = this.state.selectedParts;
-    const unitsOfPartsBeforeSale = this.state.selectedParts.amountInUnits;
+    const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;
     if (unitsOfPartsBeforeSale >= 1) {
       const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 1;
-      const packsOfPartsBeforeSale = this.state.selectedParts.numberOfPacks;
+      const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
       const packsOfPartsAfterSale = packsOfPartsBeforeSale - (1 / 130);
       const partsSold = (this.state.selectedParts.partsSold || 0)
-      const editedVersionOfPartsThatSold = { ...partsThatSold, amountInUnits: unitsOfPartsAfterSale, numberOfPacks: packsOfPartsAfterSale, partsSold: (partsSold + 1) };
+      const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 1) };
+      const updatedMainPartsList = this.state.mainPartsList
+        .filter(parts => parts.id !== this.state.selectedParts.id)
+        .concat(editedVersionOfPartsThatSold);
+      this.setState({
+        mainPartsList: updatedMainPartsList,
+        updatePartsFormVisible: false,
+        selectedParts: null,
+      });
+    } else {
+      alert("Not Enough Parts Left For This Sale");
+    }
+  }
+
+  handleSellingThreeUnits = () => {
+    const partsThatSold = this.state.selectedParts;
+    const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;
+    if (unitsOfPartsBeforeSale >= 3) {
+      const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 3;
+      const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
+      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (3 / 130);
+      const partsSold = (this.state.selectedParts.partsSold || 0)
+      const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 3) };
       const updatedMainPartsList = this.state.mainPartsList
         .filter(parts => parts.id !== this.state.selectedParts.id)
         .concat(editedVersionOfPartsThatSold);
@@ -89,13 +111,13 @@ class PartsControl extends React.Component {
 
   handleSellingTenUnits = () => {
     const partsThatSold = this.state.selectedParts;
-    const unitsOfPartsBeforeSale = this.state.selectedParts.amountInUnits;
+    const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;
     if (unitsOfPartsBeforeSale >= 10) {
       const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 10;
-      const packsOfPartsBeforeSale = this.state.selectedParts.numberOfPacks;
+      const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
       const packsOfPartsAfterSale = packsOfPartsBeforeSale - (10 / 130);
       const partsSold = (this.state.selectedParts.partsSold || 0)
-      const editedVersionOfPartsThatSold = { ...partsThatSold, amountInUnits: unitsOfPartsAfterSale, numberOfPacks: packsOfPartsAfterSale, partsSold: (partsSold + 10) };
+      const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 10) };
       const updatedMainPartsList = this.state.mainPartsList
         .filter(parts => parts.id !== this.state.selectedParts.id)
         .concat(editedVersionOfPartsThatSold);
@@ -125,8 +147,9 @@ class PartsControl extends React.Component {
         <PartsDetail
           parts={this.state.selectedParts}
           onEditClick={this.handleEditClick}
-          onSellOneClick={this.handleSellingOneParts}
-          onSellTenClick={this.handleSellingTenUnits}
+          onSellClick={this.handleSellingSelectedParts}
+          onSellThreeUnitsClick={this.handleSellingThreeUnits}
+          onSellTenUnitsClick={this.handleSellingTenUnits}
         />
       buttonText = "Back to parts list";
     }
@@ -140,7 +163,7 @@ class PartsControl extends React.Component {
       currentVisibleState =
         <PartsList
           partsList={this.state.mainPartsList}
-          onPartsSelection={this.handleUpdatingOneParts}
+          onPartsSelection={this.handleUpdatingSelectedParts}
         />
       buttonText = "Add a new Parts";
     }
