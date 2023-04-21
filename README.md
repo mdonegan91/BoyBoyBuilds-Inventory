@@ -53,7 +53,7 @@ git clone https://github.com/mdonegan91/BoyBoyBuilds-Inventory
 
 ## Known Bugs
 
-* App functionality is currently very limited due to static-only state being utilized.
+* No known bugs
 
 ## License
 
