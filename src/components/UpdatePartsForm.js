@@ -58,7 +58,7 @@ function UpdatePartsForm(props) {
             <tr>
               <td>
                 <label htmlFor="packQuantity" style={labelStyles}>Crates</label>
-                <input type="number" name="packQuantity" min="1" placeholder={props.parts.packQuantity} style={inputStyles} required />
+                <input type="number" name="packQuantity" placeholder={props.parts.packQuantity} style={inputStyles} required />
               </td>
             </tr>
             <tr>

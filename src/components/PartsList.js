@@ -5,6 +5,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const listStyles = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "left",
   // border: "2px solid black"
 }
 
@@ -13,9 +16,8 @@ function PartsList(props) {
     <React.Fragment>
       <Row>
         <div style={listStyles}>
-          <br />
           {props.partsList.map((parts) =>
-            <Col md={4} className="mb-4">
+            <Col md={4} className="mb-4" key={parts.id}>
               <Parts
                 whenPartsClicked={props.onPartsSelection}
                 description={parts.description}
@@ -24,12 +26,10 @@ function PartsList(props) {
                 cost={parts.cost}
                 packQuantity={parseFloat(parts.packQuantity).toFixed(2)}
                 unitQuantity={parts.unitQuantity}
-                key={parts.id}
                 id={parts.id}
               />
             </Col>
           )}
-          <br />
         </div>
       </Row>
     </React.Fragment>

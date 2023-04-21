@@ -59,7 +59,7 @@ function NewPartsForm(props) {
             </tr>
             <tr>
               <td>
-                <input type="number" step="0.01" min="0.01" name="cost" placeholder="Cost per unit" required style={updateFormStyles.input} />
+                <input type="number" step="0.01" name="cost" placeholder="Cost per unit" required style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
