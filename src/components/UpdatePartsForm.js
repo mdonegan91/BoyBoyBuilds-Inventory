@@ -3,16 +3,26 @@ import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
 function UpdatePartsForm(props) {
+  const inputStyles = {
+    textAlign: "center",
+    marginLeft: "3px",
+    color: "white",
+    backgroundColor: "black",
+    border: "none",
+  };
 
   const updateFormStyles = {
-    width: "50%",
+    width: "20%",
     marginLeft: "auto",
     marginRight: "auto",
-    input: {
-      textAlign: "center",
-      marginLeft: "3px",
-    },
-  }
+    color: "white",
+    textAlign: "center",
+    backgroundColor: "black",
+  };
+
+  const labelStyles = {
+    color: "white"
+  };
 
   return (
     <React.Fragment>
@@ -23,32 +33,32 @@ function UpdatePartsForm(props) {
           <tbody>
             <tr>
               <td>
-                <label htmlFor="description">Description</label>
-                <input type="text" name="description" placeholder={props.parts.description} style={updateFormStyles.input} required />
+                <label htmlFor="description" style={labelStyles}>Description</label>
+                <input type="text" name="description" placeholder={props.parts.description} style={inputStyles} required />
               </td>
             </tr>
             <tr>
             <td>
-                <label htmlFor="size">Size</label>
-                <input type="text" name="size" placeholder={props.parts.size} style={updateFormStyles.input} />
+                <label htmlFor="size" style={labelStyles}>Size</label>
+                <input type="text" name="size" placeholder={props.parts.size} style={inputStyles} />
               </td>
             </tr>
             <tr>
               <td>
-                <label htmlFor="material">Material</label>
-                <input type="text" name="material" placeholder={props.parts.material} style={updateFormStyles.input} />
+                <label htmlFor="material" style={labelStyles}>Material</label>
+                <input type="text" name="material" placeholder={props.parts.material} style={inputStyles} />
               </td>
             </tr>
             <tr>
               <td>
-                <label htmlFor="cost">Cost</label>
-                <input type="number" step="0.01" min="1" name="cost" placeholder={props.parts.cost} style={updateFormStyles.input} required />
+                <label htmlFor="cost" style={labelStyles}>Cost</label>
+                <input type="number" step="0.01" min=".01" name="cost" placeholder={props.parts.cost} style={inputStyles} required />
               </td>
             </tr>
             <tr>
               <td>
-                <label htmlFor="packQuantity">Crates</label>
-                <input type="number" name="packQuantity" min="1" placeholder={props.parts.packQuantity} style={updateFormStyles.input} required />
+                <label htmlFor="packQuantity" style={labelStyles}>Crates</label>
+                <input type="number" name="packQuantity" min="1" placeholder={props.parts.packQuantity} style={inputStyles} required />
               </td>
             </tr>
             <tr>

@@ -25,11 +25,11 @@ function PartsDetail(props) {
       <h6>Units sold:{props.parts.partsSold}</h6>
       <br/>
 
-      <button onClick={props.onSellClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 1 unit</button>
+      <button onClick={props.onSellClick} className="btn btn-outline-light btn-sm" style={buttonStyles.sell}>Sell 1 unit</button>
 
-      <button onClick={props.onSellThreeUnitsClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 3 units</button>
+      <button onClick={props.onSellThreeUnitsClick} className="btn btn-outline-light btn-sm" style={buttonStyles.sell}>Sell 3 units</button>
 
-      <button onClick={props.onSellTenUnitsClick} className="btn btn-outline-dark btn-sm" style={buttonStyles.sell}>Sell 10 units</button>
+      <button onClick={props.onSellTenUnitsClick} className="btn btn-outline-light btn-sm" style={buttonStyles.sell}>Sell 10 units</button>
 
       <br/><br/><br/><br/>
 

@@ -9,9 +9,15 @@ function NewPartsForm(props) {
     width: "20%",
     marginLeft: "auto",
     marginRight: "auto",
+    color: "white",
+    textAlign: "center",
+    backgroundColor: "black",
     input: {
       textAlign: "center",
       marginLeft: "3px",
+      color: "white",
+      backgroundColor: "black",
+      border: "none",
     },
   }
 
