@@ -3,6 +3,7 @@ import Header from "./Header";
 import PartsControl from "./PartsControl";
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 
 function App() {
   return (
