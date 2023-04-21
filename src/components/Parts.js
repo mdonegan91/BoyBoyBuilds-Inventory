@@ -11,7 +11,7 @@ function Parts(props) {
 
   return (
     <React.Fragment>
-      <h4>{props.name}</h4>
+      <h4>{props.description}</h4>
       <h6>Size: {props.size}</h6>
       <h6>Material: {props.material}</h6>
       <h6>Available units: {props.unitQuantity}</h6>

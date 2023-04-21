@@ -71,7 +71,7 @@ class PartsControl extends React.Component {
     if (unitsOfPartsBeforeSale >= 1) {
       const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 1;
       const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
-      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (1 / 130);
+      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (1 / 100);
       const partsSold = (this.state.selectedParts.partsSold || 0)
       const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 1) };
       const updatedMainPartsList = this.state.mainPartsList
@@ -93,7 +93,7 @@ class PartsControl extends React.Component {
     if (unitsOfPartsBeforeSale >= 3) {
       const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 3;
       const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
-      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (3 / 130);
+      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (3 / 100);
       const partsSold = (this.state.selectedParts.partsSold || 0)
       const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 3) };
       const updatedMainPartsList = this.state.mainPartsList
@@ -115,7 +115,7 @@ class PartsControl extends React.Component {
     if (unitsOfPartsBeforeSale >= 10) {
       const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 10;
       const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
-      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (10 / 130);
+      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (10 / 100);
       const partsSold = (this.state.selectedParts.partsSold || 0)
       const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 10) };
       const updatedMainPartsList = this.state.mainPartsList

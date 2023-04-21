@@ -23,7 +23,7 @@ function NewPartsForm(props) {
       material: event.target.material.value,
       cost: parseFloat(event.target.cost.value),
       packQuantity: parseFloat(event.target.packQuantity.value).toFixed(2),
-      unityQuantity: parseInt(event.target.packQuantity.value) * 130,
+      unitQuantity: parseInt(event.target.packQuantity.value) * 100,
       id: v4(),
 
     })
@@ -38,32 +38,32 @@ function NewPartsForm(props) {
           <tbody>
             <tr>
               <td>
-                <input size="text" name="description" placeholder="Description" required style={updateFormStyles.input} />
+                <input type="text" name="description" placeholder="Parts Description" required style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
-                <input size="number" name="size" placeholder="Size" style={updateFormStyles.input} />
+                <input type="text" name="size" placeholder="Size" style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
-                <input size="text" name="material" placeholder="Material" style={updateFormStyles.input} />
+                <input type="text" name="material" placeholder="Material" style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
-                <input size="number" step="0.01" min="1" name="cost" placeholder="Cost" required style={updateFormStyles.input} />
+                <input type="number" step="0.01" min="0.01" name="cost" placeholder="Cost per unit" required style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
-                <input size="number" name="packQuantity" min="1" placeholder="Number of packs" required style={updateFormStyles.input} />
+                <input type="number" name="packQuantity" min="1" placeholder="Number of Packs" required style={updateFormStyles.input} />
               </td>
             </tr>
             <tr>
               <td>
-                <button size="submit" className="btn btn-secondary btn-sm">Add to Inventory</button>
+                <button type="submit" className="btn btn-secondary btn-sm">Add to Inventory</button>
               </td>
             </tr>
           </tbody>
@@ -71,6 +71,9 @@ function NewPartsForm(props) {
       </form>
     </React.Fragment>
   );
+
+
+
 }
 
 NewPartsForm.propTypes = {
