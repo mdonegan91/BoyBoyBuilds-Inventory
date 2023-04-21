@@ -126,7 +126,6 @@ class PartsControl extends React.Component {
           parts={this.state.selectedParts}
           onEditClick={this.handleEditClick}
           onSellClick={this.handleSellingSelectedParts}
-          onSellThreeUnitsClick={this.handleSellingThreeUnits}
           onSellTenUnitsClick={this.handleSellingTenUnits}
         />
       buttonText = "Back to parts list";

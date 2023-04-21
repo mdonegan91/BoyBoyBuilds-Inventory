@@ -16,7 +16,7 @@ function PartsDetail(props) {
   return (
     <React.Fragment>
       <br/>
-      <h4>{props.parts.description} Details</h4>
+      <h4>{props.parts.details} Details</h4>
       <h6>Size: {props.parts.size}</h6>
       <h6>Material: {props.parts.material}</h6>
       <h6>Cost: ${props.parts.cost}/unit</h6>

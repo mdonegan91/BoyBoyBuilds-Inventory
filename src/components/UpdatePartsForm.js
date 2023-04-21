@@ -57,7 +57,7 @@ function UpdatePartsForm(props) {
             </tr>
             <tr>
               <td>
-                <label htmlFor="packQuantity" style={labelStyles}>Crates</label>
+                <label htmlFor="packQuantity" style={labelStyles}>Packs</label>
                 <input type="number" name="packQuantity" placeholder={props.parts.packQuantity} style={inputStyles} required />
               </td>
             </tr>
@@ -74,13 +74,14 @@ function UpdatePartsForm(props) {
 
   function handleUpdatePartsFormSubmission(event) {
     event.preventDefault();
+    const packQuantity = parseFloat(event.target.packQuantity.value);
     props.onUpdateFormSubmission({
       description: event.target.description.value,
       size: event.target.size.value,
       material: event.target.material.value,
       cost: parseFloat(event.target.cost.value),
-      packQuantity: parseFloat(event.target.packQuantity.value).toFixed(2),
-      unityQuantity: parseInt(event.target.packQuantity.value) * 130,
+      packQuantity: packQuantity,
+      unitQuantity: parseInt(packQuantity) * 100,
       id: v4(),
     });
   }
