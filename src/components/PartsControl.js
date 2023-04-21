@@ -87,28 +87,6 @@ class PartsControl extends React.Component {
     }
   }
 
-  handleSellingThreeUnits = () => {
-    const partsThatSold = this.state.selectedParts;
-    const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;
-    if (unitsOfPartsBeforeSale >= 3) {
-      const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 3;
-      const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
-      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (3 / 100);
-      const partsSold = (this.state.selectedParts.partsSold || 0)
-      const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 3) };
-      const updatedMainPartsList = this.state.mainPartsList
-        .filter(parts => parts.id !== this.state.selectedParts.id)
-        .concat(editedVersionOfPartsThatSold);
-      this.setState({
-        mainPartsList: updatedMainPartsList,
-        updatePartsFormVisible: false,
-        selectedParts: null,
-      });
-    } else {
-      alert("Not Enough Parts Left For This Sale");
-    }
-  }
-
   handleSellingTenUnits = () => {
     const partsThatSold = this.state.selectedParts;
     const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;

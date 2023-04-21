@@ -16,7 +16,7 @@ function PartsDetail(props) {
   return (
     <React.Fragment>
       <br/>
-      <h4>{props.parts.details} Details</h4>
+      <h4>{props.parts.description} Details</h4>
       <h6>Size: {props.parts.size}</h6>
       <h6>Material: {props.parts.material}</h6>
       <h6>Cost: ${props.parts.cost}/unit</h6>
@@ -26,8 +26,6 @@ function PartsDetail(props) {
       <br/>
 
       <button onClick={props.onSellClick} className="btn btn-outline-light btn-sm" style={buttonStyles.sell}>Sell 1 unit</button>
-
-      <button onClick={props.onSellThreeUnitsClick} className="btn btn-outline-light btn-sm" style={buttonStyles.sell}>Sell 3 units</button>
 
       <button onClick={props.onSellTenUnitsClick} className="btn btn-outline-light btn-sm" style={buttonStyles.sell}>Sell 10 units</button>
 
@@ -42,7 +40,6 @@ PartsDetail.propTypes = {
   parts: PropTypes.object,
   onEditClick: PropTypes.func,
   onSellClick: PropTypes.func,
-  onSellThreeUnitsClick: PropTypes.func,
   onSellTenUnitsClick: PropTypes.func,
 };
   
