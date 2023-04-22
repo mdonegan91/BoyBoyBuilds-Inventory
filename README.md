@@ -9,7 +9,6 @@
 #### 🧰 [Setup / Installation](#setup-and-installation)
 #### 🗜️ [Known Bugs](#known-bugs)
 #### 🧲 [License](#license) 
-#### ⚙️ [Deployed Site] (https://mdonegan91.github.io/BoyBoyBuilds-Inventory/)
 
 ## Technologies Used
 * React
