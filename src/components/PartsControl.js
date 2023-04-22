@@ -142,7 +142,7 @@ class PartsControl extends React.Component {
           partsList={this.state.mainPartsList}
           onPartsSelection={this.handleUpdatingSelectedParts}
         />
-      buttonText = "Add a new Parts";
+      buttonText = "Add a New Part";
     }
 
     return (
