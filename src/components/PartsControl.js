@@ -128,7 +128,7 @@ class PartsControl extends React.Component {
           onSellClick={this.handleSellingSelectedParts}
           onSellTenUnitsClick={this.handleSellingTenUnits}
         />
-      buttonText = "Back to parts list";
+      buttonText = "Back to Parts list";
     }
     else if (this.state.newPartsFormVisible) {
       currentVisibleState =

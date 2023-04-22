@@ -8,3 +8,12 @@ body {
   color:white;
   background-color: black;
 }
+
+@media only screen and (max-width: 767px) {
+  .new-parts-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

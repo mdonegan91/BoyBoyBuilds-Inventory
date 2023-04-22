@@ -19,7 +19,7 @@ function NewPartsForm(props) {
       backgroundColor: "black",
       border: "none",
     },
-  }
+  };
 
   function handleNewPartsFormSubmission(event) {
     event.preventDefault();
@@ -37,7 +37,7 @@ function NewPartsForm(props) {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleNewPartsFormSubmission} style={updateFormStyles}>
+      <form onSubmit={handleNewPartsFormSubmission} style={updateFormStyles} className="new-parts-form">
         <br />
         <h4>Add Parts</h4>
         <table className="table">
