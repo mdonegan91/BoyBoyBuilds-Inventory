@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.74804660.css",
+    "main.js": "/react-gh-pages/static/js/main.8e1855f8.js",
+    "static/media/nutsnbolts.jpg": "/react-gh-pages/static/media/nutsnbolts.131e1ebbbcaff7a91286.jpg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.74804660.css.map": "/react-gh-pages/static/css/main.74804660.css.map",
+    "main.8e1855f8.js.map": "/react-gh-pages/static/js/main.8e1855f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74804660.css",
+    "static/js/main.8e1855f8.js"
+  ]
+}
