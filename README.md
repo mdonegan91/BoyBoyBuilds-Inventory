@@ -4,6 +4,7 @@
 
 #### By: Molly Donegan
 
+#### ⚙️ [Deployed Site](https://mdonegan91.github.io/BoyBoyBuilds-Inventory/)
 #### 🪛[Technologies Used](#technologies-used)
 #### 🔩 [Component Diagram](#component-diagram)
 #### 🧰 [Setup / Installation](#setup-and-installation)
