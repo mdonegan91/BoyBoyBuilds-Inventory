@@ -91,31 +91,34 @@ class PartsControl extends React.Component {
   }
 
   handleSellingTenUnits = () => {
-    const partsThatSold = this.state.selectedParts;
-    const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;
-    if (unitsOfPartsBeforeSale >= 10) {
-      const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 10;
-      const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
-      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (10 / 100);
-      const partsSold = (this.state.selectedParts.partsSold || 0)
-      const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 10) };
-      const updatedMainPartsList = this.state.mainPartsList
-        .filter(parts => parts.id !== this.state.selectedParts.id)
-        .concat(editedVersionOfPartsThatSold);
-      this.setState({
-        mainPartsList: updatedMainPartsList,
-        updatePartsFormVisible: false,
-        selectedParts: null,
-      });
-    } else {
+    const { selectedParts, mainPartsList } = this.state;
+    const { unitQuantity, packQuantity, partsSold = 0 } = selectedParts;
+    const unitsToSell = 10;
+    if (unitQuantity < unitsToSell) {
       alert("Not Enough Parts Left For This Sale");
+      return;
     }
+    const unitsOfPartsAfterSale = unitQuantity - unitsToSell;
+    const packsOfPartsAfterSale = packQuantity - (unitsToSell / 100);
+    const editedVersionOfPartsThatSold = {
+      ...selectedParts,
+      unitQuantity: unitsOfPartsAfterSale,
+      packQuantity: packsOfPartsAfterSale,
+      partsSold: partsSold + unitsToSell
+    };
+    const updatedMainPartsList = mainPartsList.map(parts =>
+      parts.id === selectedParts.id ? editedVersionOfPartsThatSold : parts
+    );
+    this.setState({
+      mainPartsList: updatedMainPartsList,
+      updatePartsFormVisible: false,
+      selectedParts: null
+    });
   }
 
   render() {
     let currentVisibleState = null;
     let buttonText = null;
-
     if (this.state.updatePartsFormVisible) {
       currentVisibleState =
         <UpdatePartsForm
