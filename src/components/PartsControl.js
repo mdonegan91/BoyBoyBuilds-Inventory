@@ -66,25 +66,28 @@ class PartsControl extends React.Component {
   }
 
   handleSellingSelectedParts = () => {
-    const partsThatSold = this.state.selectedParts;
-    const unitsOfPartsBeforeSale = this.state.selectedParts.unitQuantity;
-    if (unitsOfPartsBeforeSale >= 1) {
-      const unitsOfPartsAfterSale = unitsOfPartsBeforeSale - 1;
-      const packsOfPartsBeforeSale = this.state.selectedParts.packQuantity;
-      const packsOfPartsAfterSale = packsOfPartsBeforeSale - (1 / 100);
-      const partsSold = (this.state.selectedParts.partsSold || 0)
-      const editedVersionOfPartsThatSold = { ...partsThatSold, unitQuantity: unitsOfPartsAfterSale, packQuantity: packsOfPartsAfterSale, partsSold: (partsSold + 1) };
-      const updatedMainPartsList = this.state.mainPartsList
-        .filter(parts => parts.id !== this.state.selectedParts.id)
-        .concat(editedVersionOfPartsThatSold);
-      this.setState({
-        mainPartsList: updatedMainPartsList,
-        updatePartsFormVisible: false,
-        selectedParts: null,
-      });
-    } else {
+    const { selectedParts, mainPartsList } = this.state;
+    const { unitQuantity, packQuantity, partsSold = 0 } = selectedParts;
+    const unitsOfPartsAfterSale = unitQuantity - 1;
+    const packsOfPartsAfterSale = packQuantity - 0.01;
+    if (unitsOfPartsAfterSale < 0) {
       alert("Not Enough Parts Left For This Sale");
+      return;
     }
+    const editedVersionOfPartsThatSold = {
+      ...selectedParts,
+      unitQuantity: unitsOfPartsAfterSale,
+      packQuantity: packsOfPartsAfterSale,
+      partsSold: partsSold + 1
+    };
+    const updatedMainPartsList = mainPartsList.map(parts =>
+      parts.id === selectedParts.id ? editedVersionOfPartsThatSold : parts
+    );
+    this.setState({
+      mainPartsList: updatedMainPartsList,
+      updatePartsFormVisible: false,
+      selectedParts: null
+    });
   }
 
   handleSellingTenUnits = () => {
